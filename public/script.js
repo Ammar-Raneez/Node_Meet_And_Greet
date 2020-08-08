@@ -3,7 +3,7 @@ const socket = io('/')
 var peer = new Peer(undefined, {
     path: '/peerjs',
     host: '/',
-    port: '3443'    //needed for hosting
+    port: '443'    //needed for hosting
 }); 
 
 //video element
