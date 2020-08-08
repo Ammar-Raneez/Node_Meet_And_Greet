@@ -25,9 +25,10 @@ video {
 }
 
 .main__left {
-    flex: 0.8;
+    flex: 1;
     display: flex;
     flex-direction: column;
+    transition: width 0.3s ease-in;
 }
 
 .main__videos {
@@ -77,8 +78,10 @@ video {
 .main__right {
     flex: 0.2;
     display: flex;
+    padding: 20px;
     flex-direction: column;
     background-color: #333;
+    transition: all 0.3s ease-in;
 }
 
 .main__header {
@@ -116,4 +119,15 @@ video {
 
 .unmute, .stop {
     color: #CC3B33;
+}
+
+
+.leftManipulate {
+    width: 100%;
+}
+.hideChat {
+    display: none;
+}
+.visuallyhidden {
+    opacity: 0.9;
 }

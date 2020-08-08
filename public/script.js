@@ -159,3 +159,31 @@ const setPlayVideo = () => {
     `
     document.querySelector('.main__video_button').innerHTML = html;
 }
+
+
+//leave meeting
+const leaveMeeting = () => {
+    window.location.href = 'https://google.com'
+}
+
+
+//open/close chat
+const openCloseChat = () => {
+    if(document.querySelector('.main__right').classList.contains('hideChat')) {
+        document.querySelector('.main__right').classList.remove('hideChat');
+        setTimeout(() => {
+            document.querySelector('.main__right').classList.remove('visuallyHidden');
+        }, 2);
+        document.querySelector('.main__left').classList.add('leftManipulate');
+    } else {
+        document.querySelector('.main__right').classList.add('visuallyHidden');    
+        document.querySelector('.main__right').addEventListener('transitionend', e => {
+            document.querySelector('.main__right').classList.add('hideChat');
+        }, {
+            capture: false,
+            once: true,
+            passive: false
+        });
+        document.querySelector('.main__left').classList.remove('leftManipulate');
+    }
+}
