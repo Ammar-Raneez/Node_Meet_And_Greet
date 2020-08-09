@@ -23,6 +23,13 @@ app.get('/', (req, res, next) => {
     res.redirect(`/${uuidv4()}`)    //generating a unique id, and redirecting user to /id, if you visit "/"
 })
 
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");  //allow my response to be shared for anyone who requests it
+    res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+    next();                                             //keep going onto the next endpoint
+});
+
+
 //instead of localhost/ we wanna have localhost/roomid, so that there're unique ids
 app.get('/:room', (req, res, next) => {
     res.statusCode = 200

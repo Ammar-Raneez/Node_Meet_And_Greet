@@ -22,6 +22,7 @@ video {
 .main {
     height: 100vh;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .main__left {
@@ -131,3 +132,16 @@ video {
 .visuallyhidden {
     opacity: 0.9;
 }
+
+@media (max-width: 748px) {
+    .main {
+        display: block;
+    }
+    .main__left {
+        height: 100%;
+    }
+    .main__right {
+        height: 100%;
+        max-height: 400px;
+    }
+} 
