@@ -134,14 +134,17 @@ video {
 }
 
 @media (max-width: 748px) {
-    .main {
-        display: block;
+    body {
+        min-height: 800px;
     }
-    .main__left {
+    .main {
+        flex-direction: column;
         height: 100%;
     }
     .main__right {
-        height: 100%;
-        max-height: 400px;
+        min-height: 350px;
+    }
+    .main__chat_button {
+        display: none;
     }
 } 
